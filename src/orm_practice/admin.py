@@ -2,18 +2,20 @@ from django.contrib import admin
 from .models import Author, Book
 
 
-@admin.register(Author)
+
 class AuthorAdmin(admin.ModelAdmin):
-    #model = Author
-    fields = ['name']
-@admin.register(Book)
+    
+    fields = ['name', 'birth_date', 'biography']
+
+
+
 class BookAdmin(admin.ModelAdmin):
-    #model = Book
-    fields = ['title', 'author','is_bestseller',
+    fields = ['title', 'author', 'is_bestseller',
             'rating', 'pub_year', 'price', 'discount']
+    
 
 
 
-# admin.site.register(Author, AuthorAdmin)
-# admin.site.register(Book, BookAdmin)
+admin.site.register(Author, AuthorAdmin)
+admin.site.register(Book, BookAdmin)
 

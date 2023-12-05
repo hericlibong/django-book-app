@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<ul>
+{% for book in list_books %}
+<li>
+<a href="{% url 'detail_book' book.pk %}">{{ book.title }}</a>
+{% if book.author %}
+<br>
+<a href="{% url 'detail_author' book.author.pk %}">{{ book.author.name }}</a>
+{% endif %}
+</li>
+
+{% endfor %}
+</ul>
+	{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<ul>
+
+<h2> titre : {{ book.title }}  </h2>
+<li><p> Auteur : {{ book.author }}  </p>  </li>
+<li><p> Prix : {{ book.price }}  </p>  </li>   
+<li><p> Année : {{ book.pub_year }}  </p>  </li>   
+<li><p> Note : {{ book.rating }}  </p>  </li>   
+
+</ul>
+
+<p><a href="{% url 'books' %}">Retour à la liste</a></p>
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h2> Fiche écrivain  </h2>
+
+<h1>{{ author.name }}</h1>
+{% if author.biography %}
+<p>Biographie : {{ author.biography }}</p>
+{% endif %}
+{% if author.birth_date %}
+<p>Date de naissance : {{ author.birth_date }}</p>
+{% endif %}
+<p><a href="{% url 'books' %}">Retour à la liste de livres </a></p>
+<p><a href="{% url 'authors' %}">Retour à la liste des écrivains </a></p>
+
+{% endblock content %}
